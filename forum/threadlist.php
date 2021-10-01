@@ -1,4 +1,3 @@
-<?php
 <!doctype html>
 <html lang="en">
 
@@ -23,10 +22,23 @@
     <?php include 'partials/_header.php';?>
     <?php include 'partials/_dbconnect.php';?>
 
+    <?php
+    $id = $_GET['catid'];
+    $sql = "SELECT * FROM `categories` WHERE category_id=$id";
+
+    $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_assoc($result))
+    {
+        $catname = $row['category_name'];
+        $catdesc = $row['category_description'];
+    }
+
+?>
+
     <div class="container my-4">
         <div class="jumbotron">
-            <h1 class="display-4">Welcome to python Forums</h1>
-            <p class="lead">Python description</p>
+            <h1 class="display-4">Welcome to <?php echo $catname; ?> Forums</h1>
+            <p class="lead"><?php echo $catdesc;?></p>
             <hr class="my-4">
             <p>This is a peer to peer forum.</p>
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
@@ -79,5 +91,3 @@
 </body>
 
 </html>
-
-?>
