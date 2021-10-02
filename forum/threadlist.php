@@ -60,31 +60,14 @@
        echo '<div class="media my-3">
             <img src="..." class="mr-3" alt="...">
             <div class="media-body">
-                <h5 class="mt-0"><a class ="text-dark" href="thread.php">'.$title.'</a></h5>
+                <h5 class="mt-0"><a class ="text-dark" href="thread.php?threadid=' . $id. '">'. $title . ' </a></h5>
                 <p>'.$desc.'</p>
             </div>
         </div>';
     }
 
 ?>
-        <div class="media my-3">
-            <img src="..." class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Media heading</h5>
-                <p>Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's
-                    beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is
-                    jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-        </div>
-        <div class="media my-3">
-            <img src="..." class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Media heading</h5>
-                <p>Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's
-                    beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is
-                    jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-        </div>
+        
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
