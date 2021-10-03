@@ -31,7 +31,26 @@
         $desc = $row['thread_desc'];}
 
 ?>
+ <?php
+    $showAlert = false;
+    if($_SERVER['REQUEST_METHOD']=='POST')
+    {
+        $comment = $_POST['comment'];
 
+        $sql = "INSERT INTO `comments` (`comment_content`, `thread_id`, `comment_time`, `comment_by`) VALUES ('$comment', '$id', current_timestamp(), '0');";
+
+        $result = mysqli_query($conn, $sql);
+        $showAlert = true;
+    }
+    if($showAlert){
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success! </strong>Your comment has been added!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
+    }
+?>
     <div class="container my-4">
         <div class="jumbotron">
             <h1 class="display-4"> <?php echo $title; ?></h1>
@@ -59,7 +78,7 @@
 
         <?php
     $id = $_GET['threadid'];
-    $sql = "SELECT * FROM `comments` WHERE comment_id=$id";
+    $sql = "SELECT * FROM `comments` WHERE thread_id=$id";
     
     $result = mysqli_query($conn, $sql);
     $noResult = true;
@@ -68,9 +87,11 @@
         $noResult = false;
         $id = $row['thread_id'];
         $desc = $row['comment_content'];
+        $time = $row['comment_time'];
         echo '<div class="media my-3">
         <img src="..." class="mr-3" alt="...">
         <div class="media-body">
+        <p class="font-weight-bold my-0">Annonymus User at '.$time.'</p>
         <p>'.$desc.'</p>
         </div>
         </div>';
