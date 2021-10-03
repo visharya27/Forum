@@ -67,7 +67,15 @@
             </div>
         </div>';
     }
-
+    if($noResult)
+    {
+        echo '<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <p class="display-4">No Question so far :)</p>
+          <p class="lead">Be the first one to ask a question.</p>
+        </div>
+      </div>';
+    }
 ?>
         
     </div>
