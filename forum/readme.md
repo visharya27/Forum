@@ -1,8 +1,3 @@
-
-This is a fotum project written in php
-contains
-1. about.php
-2. contact.php
-3. index.php
-4. readme.md
-5. threadlist.php
+A PHP based Forum website that takes queries of users and anyone across globe will answer that query.
+It pulls queries and categories from the database and display on the page
+It also has a login functionality, so only logged in users can answer to the queries
