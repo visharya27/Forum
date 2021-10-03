@@ -41,4 +41,19 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 </nav>';
 include 'partials/_loginmodal.php';
 include 'partials/_signupmodal.php';
+if(isset($_GET['signupsuccess']) && $_GET['signupsuccess']=="true")
+{
+  echo '<div class="alert my-0 alert-success alert-dismissible fade show" role="alert">
+  <strong>Yay!</strong> You have successfully created an account! You can now login.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+else if(isset($_GET['error']))
+{
+    echo '<div class="alert alert-danger my-0 alert-dismissible fade show" role="alert">
+    <strong>Oops..</strong>'.$_GET['error'].'
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>';
+}
+
 ?>
