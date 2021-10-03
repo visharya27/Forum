@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -45,8 +44,51 @@
     </div>
     <div class="container py-2">
         <h1>Discussion</h1>
-       
-    </div> -->
+
+    </div>
+    <div class="container">
+        <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Post your comment</label>
+                <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+
+        <?php
+    $id = $_GET['threadid'];
+    $sql = "SELECT * FROM `comments` WHERE comment_id=$id";
+    
+    $result = mysqli_query($conn, $sql);
+    $noResult = true;
+    while($row = mysqli_fetch_assoc($result))
+    {   
+        $noResult = false;
+        $id = $row['thread_id'];
+        $desc = $row['comment_content'];
+        echo '<div class="media my-3">
+        <img src="..." class="mr-3" alt="...">
+        <div class="media-body">
+        <p>'.$desc.'</p>
+        </div>
+        </div>';
+    }
+    
+    if($noResult)
+    {
+        echo '<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <p class="display-4">No Question so far :)</p>
+          <p class="lead">Be the first one to ask a question.</p>
+        </div>
+      </div>';
+    }
+
+?>
+    </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -63,4 +105,3 @@
 </body>
 
 </html>
-
