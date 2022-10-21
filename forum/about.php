@@ -36,7 +36,9 @@
         var a = 10;
         var b = 20;
         var sum = a+b;
+        var sub = a-b;
         document.write(sum);
+         document.write(sub);
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
