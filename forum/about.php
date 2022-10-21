@@ -33,6 +33,10 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        var a = 10;
+        var b = 20;
+        var sum = a+b;
+        document.write(sum);
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
