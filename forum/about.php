@@ -38,9 +38,11 @@
         var sum = a+b;
         var sub = a-b;
         var mult=a*b;
+        var div = a/b;
         document.write(sum);
          document.write(sub);
          document.write(mul);
+         document.write(div);
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
